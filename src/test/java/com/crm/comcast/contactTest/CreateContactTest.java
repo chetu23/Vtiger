@@ -1,5 +1,6 @@
 package com.crm.comcast.contactTest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.crm.comcastPomRepo.ContactInformationPage;
@@ -32,32 +33,12 @@ public class CreateContactTest extends BaseClass{
             ContactInformationPage cip= new ContactInformationPage(driver);
             
             String actualSucessfulmessage =cip.getsucessfulMsg().getText();
-   		    if(actualSucessfulmessage.contains(cellValue)) {
-   			   System.out.println("contact Last Name is Created:pass");
-   		   }  else {
-   			 System.out.println("contact Last Name is not Created:fail");
-   		      }
+            Assert.assertEquals(actualSucessfulmessage.contains(cellValue), true);
+   		   
             
    		  
      		 		
 	}
 
 }
-/* driver.findElement(By.name("user_name")).sendKeys(username);
- driver.findElement(By.name("user_password")).sendKeys(password);
- driver.findElement(By.id("submitButton")).click();
- driver.findElement(By.linkText("Contacts")).click();
- driver.findElement(By.cssSelector("img[alt=\"Create Contact...\"]")).click();
- driver.findElement(By.name("lastname")).sendKeys(cellValue);
- driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
-String actualSucessfulmessage =driver.findElement(By.className("dvHeaderText")).getText();
-if(actualSucessfulmessage.contains(cellValue)) {
-	 System.out.println("contact Last Name is Created:pass");
-}else {
-	 System.out.println("contact Last Name is not Created:fail");
-}
-WebElement element = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
-Actions action=new Actions(driver);
-action.moveToElement(element).perform();
-driver.findElement(By.linkText("Sign Out")).click();
-driver.quit();*/
+

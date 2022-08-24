@@ -57,7 +57,7 @@ public class BaseClass {
 	 driver.manage().window().maximize();
 	 wLib.waitForElementInDom(driver);
 	 driver.get(url);
-	 sdriver = driver;
+	// sdriver = driver;
 }
 	
 	@BeforeMethod(groups= {"smokeTest","RegressionTest"})

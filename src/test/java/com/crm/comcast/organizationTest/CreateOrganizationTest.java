@@ -1,5 +1,6 @@
 package com.crm.comcast.organizationTest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.crm.comcastPomRepo.CreateOrganizationInfopage;
@@ -32,21 +33,9 @@ public class CreateOrganizationTest extends BaseClass {
 				 
 		 CreateOrganizationInfopage coip=new CreateOrganizationInfopage(driver);
 		 String actualSucessfulmessage =coip.getsucessfulMsg().getText();
-		 if(actualSucessfulmessage.contains(cellValue)) {
-			 System.out.println("organization is created:pass");
-		 }else {
-			 System.out.println("organization is not created:fail");
-		 }
-		
+		 Assert.assertEquals(actualSucessfulmessage.contains(cellValue), true);
 		
 
 	}
 
 }
-/*driver.findElement(By.name("user_name")).sendKeys(username);
-driver.findElement(By.name("user_password")).sendKeys(password);
-driver.findElement(By.id("submitButton")).click();
-driver.findElement(By.linkText("Organizations")).click();
-driver.findElement(By.cssSelector("img[title=\"Create Organization...\"]")).click();
-driver.findElement(By.name("accountname")).sendKeys(cellValue);
-driver.findElement((By.xpath("//input[@title='Save [Alt+S]']"))).click();*/

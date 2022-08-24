@@ -40,6 +40,13 @@ public class HomePage extends WebdriverUtility{
 	@FindBy(xpath="//img[@src=\"themes/softed/images/user.PNG\"]")
 	private WebElement administrationImg;
 	
+	@FindBy(linkText = "Leads")
+	private WebElement LeadLink;
+	
+
+	public WebElement getLeadLink() {
+		return LeadLink;
+	}
 
 	public WebElement getCampaignLink() {
 		return CampaignLink;
